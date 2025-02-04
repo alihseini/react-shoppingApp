@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    margin-top: 50px;
+}
+
+.productsData{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}

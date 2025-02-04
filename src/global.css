@@ -3,3 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  background-color: rgb(243, 243, 243);
+  max-width: 1000px;
+  margin: auto;
+}
