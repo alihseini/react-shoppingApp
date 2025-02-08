@@ -1,0 +1,28 @@
+
+.filters{
+    width: 17%;
+    background-color: #fff;
+    max-height: 250px;
+    padding: 15px;
+    color: #574b90;
+    border-radius: 15px;
+    border: 2px dashed #dbdbdb;
+}
+
+.filters div{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    font-size: 1.1rem;
+}
+
+.filters li{
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.filters li:hover{
+    color: #ac9df5;
+    cursor: pointer;
+}

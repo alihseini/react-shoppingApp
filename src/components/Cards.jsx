@@ -1,4 +1,4 @@
-import { shortenTitle } from "../helpers/shortenTitle";
+import { shortenTitle } from "../helpers/helper";
 import styles from "./Cards.module.css";
 import {
   MdOutlineShoppingCart,
