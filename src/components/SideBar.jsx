@@ -11,7 +11,7 @@ const categories = [
   { id: 5, category: "Women's Clothing" },
 ];
 
-function SideBar({ setQuery }) {
+function SideBar({ setQuery, query }) {
   const filterHandler = (e) => {
     if (e.target.tagName !== "LI") return;
     const category = e.target.innerText.toLowerCase();
@@ -26,7 +26,16 @@ function SideBar({ setQuery }) {
       </div>
       <ul onClick={filterHandler}>
         {categories.map((item) => (
-          <li key={item.id}>{item.category}</li>
+          <li
+            key={item.id}
+            className={
+              item.category.toLowerCase() === query.category
+                ? styles.selected
+                : null
+            }
+          >
+            {item.category}
+          </li>
         ))}
       </ul>
     </div>

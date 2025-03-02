@@ -2,7 +2,7 @@
 .filters{
     width: 17%;
     background-color: #fff;
-    max-height: 250px;
+    max-height: fit-content;
     padding: 15px;
     color: #574b90;
     border-radius: 15px;
@@ -20,9 +20,15 @@
 .filters li{
     list-style-type: none;
     margin-top: 20px;
+    padding: 5px;
 }
 
 .filters li:hover{
     color: #ac9df5;
     cursor: pointer;
+}
+
+.selected{
+    background-color: #574b9049;
+    border-radius: 5px;
 }

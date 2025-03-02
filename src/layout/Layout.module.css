@@ -1,0 +1,50 @@
+.header{
+    background-color: #574b90;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.homePage{
+    color: #fff;
+    text-decoration-line: none;
+    transition: all 0.3s;
+}
+
+.cartButton {
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.homePage:hover,.cartButton:hover{
+    color: #a59dce;
+}
+
+.itemCounter{
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    color: #574b90;
+    position: absolute;
+    border-radius: 50%;
+    padding: 1px 3px;
+    right: -6px;
+    top: -5px;
+}
+
+.none{
+    display: none;
+}
+
+.footer{
+    padding: 15px;
+    background-color: #574b90;
+    border-radius: 15px;
+    color: #fff;
+    text-align: center;
+}

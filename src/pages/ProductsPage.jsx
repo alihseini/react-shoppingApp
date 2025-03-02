@@ -45,7 +45,7 @@ function Products() {
             ))}
           </div>
         )}
-        <SideBar setQuery={setQuery} />
+        <SideBar setQuery={setQuery} query={query} />
       </div>
     </>
   );

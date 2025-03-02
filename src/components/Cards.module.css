@@ -38,13 +38,30 @@
     align-items: center;
 }
 
-.buttons button{
+.rightSideButtons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightSideButtons span{
+    font-size: 1.3rem;
+    color: #574b90;
+    padding-bottom: 5px;
+    margin: 0 15px;
+}
+
+.buttons button,.detailButton{
     background-color: #fff;
     border: none;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: #574b90;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.2s ease-in;
+}
+
+.detailButton:hover{
+    font-size: 1.8rem;
 }
 
 .buttons button:hover{

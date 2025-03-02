@@ -1,3 +1,4 @@
+
 const shortenTitle = (text) => {
   return text.split(" ").slice(0, 3).join(" ");
 };
@@ -38,10 +39,27 @@ const getInitialQuery = (searchParams) => {
   return query;
 };
 
+const sumHandler = (products) => {
+  const itemCounter = products.length;
+  const totalPrice = products.reduce(
+    (total, cur) => total + cur.price * cur.quantity,
+    0
+  );
+  return { itemCounter, totalPrice };
+};
+
+const quantityHandler = (state, id) => {
+  const index = state.selectedItems.findIndex((item) => item.id === id);
+  if (index === -1) return 0;
+  else return state.selectedItems[index].quantity;
+};
+
 export {
   shortenTitle,
   searchFilter,
   categoryFilter,
   createQuery,
   getInitialQuery,
+  sumHandler,
+  quantityHandler,
 };
