@@ -1,0 +1,47 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: calc(100vh - 49px - 69px);
+}
+
+.empty{
+    width: 100%;
+    min-height: calc(100vh - 50px - 70px - 40px);
+    border: 2px dashed #dbdbdb;
+    border-radius: 15px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty p{
+    font-size: 5rem;
+    color: #574b908e;
+}
+
+.basketCards{
+    width: 73%;
+}
+
+.button{
+    max-width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #574b90;
+    padding: 7px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+}
+
+.button:hover{
+    background-color: #a59dce;
+}

@@ -1,0 +1,41 @@
+.sidebar{
+    margin: 20px 25px 0 0;
+    width: 27%;
+    border: 2px dashed #574b90;
+    max-height: fit-content;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.sidebar > div{
+    display: flex;
+    font-size: 1.15rem;
+    gap: 5px;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.sidebar > div p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #574b90;
+}
+
+.sidebar button{
+    text-align: center;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 5px 0;
+    margin-top: 30px;
+    border: 2px dashed #574b90;
+    border-radius: 15px;
+    color: #574b90;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sidebar button:hover{
+    background-color: #574b90a1;
+    color: #fff;
+}
