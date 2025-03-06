@@ -28,7 +28,9 @@ function ItemPage() {
               <IoMdPricetag />
               {productData.price}
             </div>
-              <Link to="/products" className={styles.button}><IoMdBackspace /> Back</Link>
+            <Link to="/products" className={styles.button}>
+              <IoMdBackspace /> Back
+            </Link>
           </div>
         </>
       )}
