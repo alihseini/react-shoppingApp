@@ -1,4 +1,3 @@
-
 const shortenTitle = (text) => {
   return text.split(" ").slice(0, 3).join(" ");
 };
@@ -41,10 +40,9 @@ const getInitialQuery = (searchParams) => {
 
 const sumHandler = (products) => {
   const itemCounter = products.length;
-  const totalPrice = products.reduce(
-    (total, cur) => total + cur.price * cur.quantity,
-    0
-  );
+  const totalPrice = products
+    .reduce((total, cur) => total + cur.price * cur.quantity, 0)
+    .toFixed(2);
   return { itemCounter, totalPrice };
 };
 
