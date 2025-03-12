@@ -1,14 +1,16 @@
 import { Link, useParams } from "react-router-dom";
+import { shortenTitle } from "../helpers/helper";
 import { useProductDetail } from "../context/ProductsContext";
 import Loader from "../components/Loader";
 import { TbCategoryMinus } from "react-icons/tb";
 import { IoMdPricetag, IoMdBackspace } from "react-icons/io";
 import styles from "./ItemPage.module.css";
+import useTitle from "../hooks/useTitle";
 
 function ItemPage() {
   const { id } = useParams();
   const productData = useProductDetail(+id);
-  console.log(productData);
+  useTitle(shortenTitle(productData.title));
 
   return (
     <div className={styles.container}>

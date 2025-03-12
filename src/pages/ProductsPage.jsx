@@ -11,8 +11,10 @@ import {
 import { useSearchParams } from "react-router-dom";
 import Search from "../components/Search";
 import SideBar from "../components/SideBar";
+import useTitle from "../hooks/useTitle";
 
 function Products() {
+  useTitle("Shopping App");
   const productsData = useProducts();
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState([]);

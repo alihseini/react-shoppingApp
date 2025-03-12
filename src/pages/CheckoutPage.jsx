@@ -4,8 +4,10 @@ import { useCart } from "../context/CartContext";
 import styles from "./CheckoutPage.module.css";
 import { IoMdBackspace } from "react-icons/io";
 import BasketSidebar from "../components/BasketSidebar";
+import useTitle from "../hooks/useTitle";
 
 function CheckoutPage() {
+  useTitle("Checkout");
   const [state, dispatch] = useCart();
 
   const buttonHandler = (type, payload) => {
