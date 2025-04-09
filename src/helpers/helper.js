@@ -38,12 +38,14 @@ const getInitialQuery = (searchParams) => {
   return query;
 };
 
-const sumHandler = (products) => {
-  const itemCounter = products.length;
-  const totalPrice = products
+const itemCounterHandler = (products) => {
+  return products.length;
+};
+
+const totalPriceHandler = (products) => {
+  return products
     .reduce((total, cur) => total + cur.price * cur.quantity, 0)
     .toFixed(2);
-  return { itemCounter, totalPrice };
 };
 
 const quantityHandler = (state, id) => {
@@ -58,6 +60,8 @@ export {
   categoryFilter,
   createQuery,
   getInitialQuery,
-  sumHandler,
   quantityHandler,
+  itemCounterHandler,
+  totalPriceHandler,
 };
+

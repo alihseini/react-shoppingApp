@@ -2,9 +2,16 @@ import { shortenTitle } from "../helpers/helper";
 import styles from "./BasketCard.module.css";
 import { IoTrashBinOutline } from "react-icons/io5";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
+import { useDispatch } from "react-redux";
+import {
+  decreaseItem,
+  increaseItem,
+  removeItem,
+} from "../features/cart/cartSlice";
 
-function BasketCard({ data, buttonHandler }) {
+function BasketCard({ data }) {
   const { image, price, title, quantity } = data;
+  const dispatch = useDispatch();
 
   return (
     <div className={styles.eachCard}>
@@ -13,16 +20,16 @@ function BasketCard({ data, buttonHandler }) {
       <span>{price} $</span>
       <div className={styles.buttons}>
         {quantity === 1 ? (
-          <button onClick={() => buttonHandler("REMOVE_ITEM", data)}>
+          <button onClick={() => dispatch(removeItem(data))}>
             <IoTrashBinOutline />
           </button>
         ) : (
-          <button onClick={() => buttonHandler("DECREASE_ITEM", data)}>
+          <button onClick={() => dispatch(decreaseItem(data))}>
             <CiCircleMinus />
           </button>
         )}
         <span>{quantity}</span>
-        <button onClick={() => buttonHandler("INCREASE_ITEM", data)}>
+        <button onClick={() => dispatch(increaseItem(data))}>
           <CiCirclePlus />
         </button>
       </div>

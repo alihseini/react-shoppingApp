@@ -1,10 +1,10 @@
 import { FaShoppingBag } from "react-icons/fa";
 import styles from "./Layout.module.css";
-import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Layout({ children }) {
-  const [state] = useCart();
+  const state = useSelector((store) => store.cart);
 
   return (
     <>
@@ -30,3 +30,4 @@ function Layout({ children }) {
 }
 
 export default Layout;
+

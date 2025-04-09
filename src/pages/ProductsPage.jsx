@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Cards from "../components/Cards";
 import Loader from "../components/Loader";
-import { useProducts } from "../context/ProductsContext";
 import styles from "./ProductsPage.module.css";
 import {
   categoryFilter,
@@ -12,14 +12,20 @@ import { useSearchParams } from "react-router-dom";
 import Search from "../components/Search";
 import SideBar from "../components/SideBar";
 import useTitle from "../hooks/useTitle";
+import { fetchProductsData } from "../features/products/productsDataSlice";
 
 function Products() {
   useTitle("Shopping App");
-  const productsData = useProducts();
+  const { productsData, loading } = useSelector((store) => store.productsData);
+  const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [query, setQuery] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    dispatch(fetchProductsData());
+  }, []);
 
   useEffect(() => {
     setFilteredData(productsData);
@@ -38,7 +44,7 @@ function Products() {
     <>
       <Search search={search} setSearch={setSearch} setQuery={setQuery} />
       <div className={styles.container}>
-        {!productsData.length ? (
+        {loading ? (
           <Loader />
         ) : (
           <div className={styles.productsData}>

@@ -1,16 +1,25 @@
 import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductsData } from "../features/products/productsDataSlice";
 import { shortenTitle } from "../helpers/helper";
-import { useProductDetail } from "../context/ProductsContext";
 import Loader from "../components/Loader";
 import { TbCategoryMinus } from "react-icons/tb";
 import { IoMdPricetag, IoMdBackspace } from "react-icons/io";
 import styles from "./ItemPage.module.css";
 import useTitle from "../hooks/useTitle";
+import { useEffect } from "react";
 
 function ItemPage() {
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const productData = useProductDetail(+id);
-  useTitle(shortenTitle(productData.title));
+  useEffect(() => {
+    dispatch(fetchProductsData());
+  }, []);
+  const productData = useSelector((store) =>
+    store.productsData.productsData.find((i) => i.id === +id)
+  );
+
+  useTitle(shortenTitle(productData?.title||"Loading..."));
 
   return (
     <div className={styles.container}>
